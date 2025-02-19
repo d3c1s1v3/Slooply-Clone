@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  .container-main {
-    @apply max-w-[1776px] mx-auto;
-  }
+*::selection {
+  @apply bg-[#4c2339];
+}
+
+.container-xxxl {
+  @apply max-w-[1776px] mx-auto;
+}
+
+.hero-background {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(11, 15, 25, 0.6) 44%,
+      rgb(11, 15, 25) 60%
+    ),
+    url("/hero-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
 }
