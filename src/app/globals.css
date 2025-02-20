@@ -6,20 +6,29 @@
   @apply bg-[#4c2339];
 }
 
+body {
+  @apply overflow-x-hidden;
+}
+
 .container-xxxl {
   @apply max-w-[1776px] mx-auto;
 }
 
-.hero-background {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(11, 15, 25, 0.6) 44%,
-      rgb(11, 15, 25) 60%
-    ),
-    url("/hero-img.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.banner {
   position: relative;
+  background-image: linear-gradient(rgba(9, 13, 23, 0.6), rgba(9, 13, 23, 0.6)),
+    url("/hero-img.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background: linear-gradient(to bottom, transparent, rgba(9, 13, 23, 1) 100px);
 }

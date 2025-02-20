@@ -8,7 +8,7 @@ import HeaderList from "./HeaderList";
 import HeaderCTA from "./HeaderCTA";
 
 const Header = () => {
-  const [scrollY, setScrollY] = useState(window.scrollY);
+  const [scrollY, setScrollY] = useState(0);
   const isZero = scrollY === 0;
 
   useEffect(() => {
