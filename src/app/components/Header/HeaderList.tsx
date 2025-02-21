@@ -5,14 +5,14 @@ import { PiSliders } from "react-icons/pi";
 import { RiNeteaseCloudMusicLine } from "react-icons/ri";
 import { GiViolin } from "react-icons/gi";
 
+import DropdownSection from "./DropdownSection";
+import NavButton from "./NavButton";
 import {
   EXPLORE,
   GENRES,
   INSTRUMENTS,
   PRESETS,
-} from "../constants/dropDownMenuItems";
-import DropdownSection from "./DropdownSection";
-import NavButton from "./NavButton";
+} from "@/app/constants/dropDownMenuItems";
 
 const HeaderList = () => {
   return (

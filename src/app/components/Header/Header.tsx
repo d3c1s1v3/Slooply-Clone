@@ -21,7 +21,7 @@ const Header = () => {
     <header
       className={`dark1 fixed top-0 w-full py-2 ${
         isZero && "bg-transparent"
-      } z-10`}
+      } z-20`}
     >
       <div className="container-xxxl flex items-center">
         <Link href="/" className="py-2 mr-[7px]">
