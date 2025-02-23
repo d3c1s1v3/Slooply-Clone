@@ -2,12 +2,12 @@ import BannerSearch from "./BannerSearch";
 
 const Banner = () => {
   return (
-    <div className="h-screen w-screen banner">
-      <div className="max-w-[700px] h-[50%] mx-auto flex flex-col items-center justify-center ">
-        <h1 className="text-5xl text-[#fff] font-extrabold mb-2">
+    <div className="w-screen h-[800px] pt-[62px] banner flex items-center shadow-search-inset">
+      <div className="mx-auto text-center text-[#fff]">
+        <h1 className="text-5xl font-extrabold mb-4">
           Find The Sounds You Need!
         </h1>
-        <h2 className="text-2xl text-[#fff] font-extrabold mb-8">
+        <h2 className="text-2xl font-semibold mb-8">
           Royalty-free Samples, Presets, FX and MIDI
         </h2>
         <BannerSearch />

@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "search-inset": "inset 0px -100px 80px #090d17",
+      },
       colors: {
         dark1: "#0b0f19",
         dark2: "#090d17",
