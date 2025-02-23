@@ -12,7 +12,7 @@ import {
   GENRES,
   INSTRUMENTS,
   PRESETS,
-} from "@/app/constants/dropDownMenuItems";
+} from "@/constants/dropDownMenuItems";
 
 const HeaderList = () => {
   return (

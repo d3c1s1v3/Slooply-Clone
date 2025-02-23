@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { IoSearchOutline, IoCloseCircle } from "react-icons/io5";
 
-import { mockSearchData } from "../../constants/mockSearchData";
+import { mockSearchData } from "../../../constants/mockSearchData";
 
 type Item = {
   id: number;
@@ -72,7 +72,7 @@ const BannerSearch = () => {
             <Link
               href=""
               key={id}
-              className="flex justify-start bg-[#22262f] py-2 px-5 mb-1 rounded-[2.5rem] hover:bg-[#ffffff1f] border-[#ffffff0f] border"
+              className={`flex justify-start bg-[#22262f] py-2 px-5 mb-1 rounded-[2.5rem] hover:bg-[#ffffff1f] border-[#ffffff0f] border`}
             >
               {label}
             </Link>

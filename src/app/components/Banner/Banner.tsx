@@ -1,4 +1,5 @@
 import BannerSearch from "./BannerSearch";
+import ScrollingButtons from "./ScrollingButtons";
 
 const Banner = () => {
   return (
@@ -11,6 +12,7 @@ const Banner = () => {
           Royalty-free Samples, Presets, FX and MIDI
         </h2>
         <BannerSearch />
+        <ScrollingButtons />
       </div>
     </div>
   );
