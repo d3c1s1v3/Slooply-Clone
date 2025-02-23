@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChangeEvent, useState, useEffect } from "react";
+import { ChangeEvent, useState } from "react";
 import { IoSearchOutline, IoCloseCircle } from "react-icons/io5";
 
 import { mockSearchData } from "../../constants/mockSearchData";
@@ -13,13 +13,17 @@ type Item = {
 
 const BannerSearch = () => {
   const [inputValue, setInputValue] = useState<string>("");
-  const [showHints, setShowHints] = useState(false);
   const [searchResults, setSearchResults] = useState<Item[]>([]);
+
+  const showHints = searchResults.length > 0;
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setInputValue(newValue);
-    const results = newValue.trim()
+
+    const searchTerm = newValue.trim().toLowerCase();
+
+    const results = searchTerm
       ? mockSearchData
           .filter(({ label }) =>
             label.toLowerCase().includes(newValue.toLowerCase())
@@ -27,20 +31,13 @@ const BannerSearch = () => {
           .slice(0, 9)
       : [];
 
-    setTimeout(() => {
-      setSearchResults(results);
-    }, 500);
+    setSearchResults(results);
   };
 
   const handleReset = () => {
     setInputValue("");
     setSearchResults([]);
-    setShowHints(false);
   };
-
-  useEffect(() => {
-    setShowHints(searchResults.length > 0);
-  }, [searchResults]);
 
   const bg = !showHints ? "bg-white/20" : "bg-[#141822]";
   const border = !showHints && "rounded-br-[2.5rem] rounded-bl-[2.5rem]";
@@ -58,6 +55,9 @@ const BannerSearch = () => {
             placeholder="Dark trap piano 140 bpm"
             className="py-4 text-lg pr-8 outline-none w-full placeholder:text-[#777] text-[#0b0f19] placeholder:text-lg selection:bg-[#fccddb]"
             onChange={handleSearch}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") handleReset();
+            }}
           />
           {inputValue && (
             <button type="button" onClick={handleReset}>
