@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { IoSearchOutline, IoCloseCircle } from "react-icons/io5";
 
-import { mockSearchData } from "../../../constants/mockSearchData";
+import { mockSearchData } from "../../../constants/db";
 
 type Item = {
   id: number;
@@ -43,9 +43,9 @@ const BannerSearch = () => {
   const border = !showHints && "rounded-br-[2.5rem] rounded-bl-[2.5rem]";
 
   return (
-    <div className="relative">
+    <div className="relative z-10 max-w-[620px] mx-auto">
       <div
-        className={`${bg} ${border} p-2 rounded-tr-[2.5rem] rounded-tl-[2.5rem] transition-all`}
+        className={`${bg} ${border} p-2 rounded-tr-[2.5rem] rounded-tl-[2.5rem]`}
       >
         <form className="flex bg-[#fff] items-center rounded-[2.5rem] overflow-hidden">
           <IoSearchOutline size={30} className="mx-4 text-[#0b0f1977]" />

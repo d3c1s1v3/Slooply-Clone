@@ -22,9 +22,9 @@ const Header = () => {
 
   return (
     <header
-      className={`dark1 fixed top-0 w-full py-2 ${
+      className={`fixed top-0 w-full py-2 ${
         isZero ? "bg-transparent" : "bg-dark2"
-      } z-20 transition-all`}
+      } z-20`}
     >
       <div className="container-xxxl flex items-center">
         <Link href="/" className="py-2 mr-[7px]">

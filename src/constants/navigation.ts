@@ -6,6 +6,7 @@ import {
   FaRocket,
   FaDrum,
   FaMicrophoneLines,
+  FaRegFaceSmileBeam,
 } from "react-icons/fa6";
 import { IoEllipsisHorizontalCircle } from "react-icons/io5";
 import { LuDiscAlbum, LuPiano } from "react-icons/lu";
@@ -16,8 +17,9 @@ import {
   PiSliders,
 } from "react-icons/pi";
 import { CgPiano } from "react-icons/cg";
-import { GiViolin } from "react-icons/gi";
+import { GiViolin, GiMusicalNotes } from "react-icons/gi";
 import { TbAlertTriangleOff } from "react-icons/tb";
+import { BsStars } from "react-icons/bs";
 
 const EXPLORE = [
   {
@@ -185,4 +187,42 @@ const PRESETS = [
   },
 ];
 
-export { EXPLORE, GENRES, INSTRUMENTS, PRESETS };
+const SCROLLING_LINKS = [
+  {
+    label: "Instruments",
+    href: "",
+    icon: PiGuitar,
+  },
+  {
+    label: "Genres",
+    href: "",
+    icon: GiMusicalNotes,
+  },
+  {
+    label: "Providers",
+    href: "",
+    icon: FaPeopleGroup,
+  },
+  {
+    label: "Moods",
+    href: "",
+    icon: FaRegFaceSmileBeam,
+  },
+  {
+    label: "Inspired by",
+    href: "",
+    icon: BsStars,
+  },
+  {
+    label: "Presets",
+    href: "",
+    icon: PiSliders,
+  },
+  {
+    label: "MIDI",
+    href: "",
+    icon: LuPiano,
+  },
+];
+
+export { EXPLORE, GENRES, INSTRUMENTS, PRESETS, SCROLLING_LINKS };

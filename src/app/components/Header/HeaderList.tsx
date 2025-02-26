@@ -7,12 +7,7 @@ import { GiViolin } from "react-icons/gi";
 
 import DropdownSection from "./DropdownSection";
 import NavButton from "./NavButton";
-import {
-  EXPLORE,
-  GENRES,
-  INSTRUMENTS,
-  PRESETS,
-} from "@/constants/dropDownMenuItems";
+import { EXPLORE, GENRES, INSTRUMENTS, PRESETS } from "@/constants/navigation";
 
 const HeaderList = () => {
   return (
