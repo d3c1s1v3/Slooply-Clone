@@ -1,9 +1,12 @@
 import Banner from "./components/Banner/Banner";
+import SwiperSection from "./components/Swiper/SwiperSection";
 
 export default function Home() {
   return (
-    <div className="min-h-[200vh]">
+    <div className="">
       <Banner />
+      <SwiperSection />
+      <SwiperSection />
     </div>
   );
 }

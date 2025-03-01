@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.className} bg-dark2`}>
         <Header />
-        <main className="container">{children}</main>
+        <main>{children}</main>
         {/* <Footer /> */}
       </body>
     </html>
