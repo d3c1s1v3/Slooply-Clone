@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full py-2 z-50 ${headerClasses} transition duration-300`}
+      className={`fixed top-0 w-full py-2 z-50 ${headerClasses} transition duration-300 header`}
     >
       <div className="container-xxxl flex items-center">
         <Link href="/" className="py-2 mr-[7px]">

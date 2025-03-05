@@ -6,7 +6,9 @@ export default function Home() {
     <div className="">
       <Banner />
       <SwiperSection />
-      <SwiperSection />
+      {/* <SwiperSection /> */}
+      {/* <SwiperSection /> */}
+      {/* <SwiperSection /> */}
     </div>
   );
 }
