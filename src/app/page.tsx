@@ -5,10 +5,14 @@ export default function Home() {
   return (
     <div className="">
       <Banner />
-      <SwiperSection />
-      {/* <SwiperSection /> */}
-      {/* <SwiperSection /> */}
-      {/* <SwiperSection /> */}
+      <SwiperSection
+        heading="Featured products!"
+        subheading="Explore popular and handpicked loops and midi files!"
+      />
+      <SwiperSection
+        heading="Check what's new"
+        subheading="Find the perfect sound for your next music project!"
+      />
     </div>
   );
 }

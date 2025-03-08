@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { Pagination } from "swiper/modules";
+import { IoEllipsisHorizontalCircleOutline } from "react-icons/io5";
+import { FaPlay } from "react-icons/fa";
 import "swiper/css";
-import "swiper/css/pagination";
 
 const SwiperButton = ({
   className,
@@ -42,52 +42,53 @@ const SwiperButton = ({
   );
 };
 
-const SwiperSection = () => {
+type Props = {
+  heading: string;
+  subheading: string;
+};
+
+const SwiperSection = ({ heading, subheading }: Props) => {
   return (
-    <div className="container-xxxl mx-auto mb-12">
-      <h3 className="text-[28px] text-[#fff] font-bold mb-1">
-        Featured products!
-      </h3>
-      <p className="text-[#ffffffb2]">
-        Explore popular and handpicked loops and midi files!
-      </p>
-      <div className="relative">
-        <Swiper
-          modules={[Pagination]}
-          pagination={{
-            dynamicBullets: true,
-            el: ".swiper-pagination",
-            clickable: true,
-          }}
-          slidesPerView={8}
-          className="h-[215px] mt-2 relative"
-          spaceBetween={10}
-        >
-          {[...Array(16)].map((_, i) => (
-            <SwiperSlide
-              key={i}
-              className="cursor-pointer bg-gray-500/20 rounded-md"
-              onClick={() => console.log(`Slide ${i + 1} clicked.`)}
-            >
-              <div className="text-[#fff] flex items-center h-full justify-center text-center relative">
+    <div className="container-xxxl mx-auto mb-24">
+      <h3 className="text-[28px] text-[#fff] font-bold mb-1">{heading}</h3>
+      <p className="text-[#ffffffb2] mb-2">{subheading}</p>
+
+      <Swiper slidesPerView={8} className="h-[215px]" spaceBetween={10}>
+        {[...Array(16)].map((_, i) => (
+          <SwiperSlide
+            key={i}
+            className="cursor-pointer bg-gray-500/20 rounded-md"
+            onClick={() => console.log(`Slide ${i + 1} clicked.`)}
+          >
+            <div className="text-[#fff] flex items-center h-full justify-center text-center relative group">
+              <span className="opacity-35">
                 Image
                 <br />
                 Placeholder
+              </span>
+              {/* overlay */}
+              <div className="absolute w-full h-full hidden group-hover:block group-hover:bg-black/20">
+                <FaPlay
+                  className="absolute inset-2/4 -translate-x-[50%] -translate-y-[50%]"
+                  size={30}
+                />
+                <IoEllipsisHorizontalCircleOutline
+                  size={35}
+                  className="absolute bottom-3 right-3"
+                />
               </div>
-              <div></div>
-            </SwiperSlide>
-          ))}
-          <SwiperButton
-            className="text-white z-10 absolute top-[50%] -translate-y-[50%] -left-3"
-            toLeft
-          ></SwiperButton>
-          <SwiperButton
-            className="text-white z-10 absolute top-[50%] -translate-y-[50%] -right-3"
-            toRight
-          ></SwiperButton>
-        </Swiper>
-        <div className="swiper-pagination"></div>
-      </div>
+            </div>
+          </SwiperSlide>
+        ))}
+        <SwiperButton
+          className="text-white z-10 absolute top-[50%] -translate-y-[50%] -left-3"
+          toLeft
+        ></SwiperButton>
+        <SwiperButton
+          className="text-white z-10 absolute top-[50%] -translate-y-[50%] -right-3"
+          toRight
+        ></SwiperButton>
+      </Swiper>
     </div>
   );
 };
