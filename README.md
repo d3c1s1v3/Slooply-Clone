@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 
-IMPORTANT NOTE: THIS IS NOT A YT TUTURIAL COPY, IT'S ONLY REVERSE ENGINEERING
+IMPORTANT NOTE: THIS IS NOT A YT TUTORIAL COPY, IT'S ONLY REVERSE ENGINEERING
 
 
 ## Getting Started
