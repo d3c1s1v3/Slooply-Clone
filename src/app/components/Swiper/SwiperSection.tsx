@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { IoEllipsisHorizontalCircleOutline } from "react-icons/io5";
+import { PiWaveformBold } from "react-icons/pi";
 import { FaPlay } from "react-icons/fa";
 import "swiper/css";
 
@@ -45,9 +46,11 @@ const SwiperButton = ({
 type Props = {
   heading: string;
   subheading: string;
+  soundCount?: number;
+  featured?: boolean;
 };
 
-const SwiperSection = ({ heading, subheading }: Props) => {
+const SwiperSection = ({ heading, subheading, featured }: Props) => {
   return (
     <div className="container-xxxl mx-auto mb-24">
       <h3 className="text-[28px] text-[#fff] font-bold mb-1">{heading}</h3>
@@ -61,6 +64,17 @@ const SwiperSection = ({ heading, subheading }: Props) => {
             onClick={() => console.log(`Slide ${i + 1} clicked.`)}
           >
             <div className="text-[#fff] flex items-center h-full justify-center text-center relative group">
+              <div className="absolute top-2 left-2 flex gap-2 items-center">
+                {featured && (
+                  <div className="bg-[#0a0e18] text-xs px-2 rounded-xl">
+                    Featured
+                  </div>
+                )}
+                <div className="bg-[#0a0e18] flex items-center gap-2 px-2 rounded-xl">
+                  <PiWaveformBold size={13} />
+                  <span className="text-xs">100</span>
+                </div>
+              </div>
               <span className="opacity-35">
                 Image
                 <br />

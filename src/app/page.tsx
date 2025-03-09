@@ -6,6 +6,7 @@ export default function Home() {
     <div className="">
       <Banner />
       <SwiperSection
+        featured
         heading="Featured products!"
         subheading="Explore popular and handpicked loops and midi files!"
       />
