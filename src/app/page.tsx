@@ -1,9 +1,10 @@
 import Banner from "./components/Banner/Banner";
+import Discover from "./components/Discover/Discover";
 import SwiperSection from "./components/Swiper/SwiperSection";
 
 export default function Home() {
   return (
-    <div className="">
+    <>
       <Banner />
       <SwiperSection
         featured
@@ -14,6 +15,7 @@ export default function Home() {
         heading="Check what's new"
         subheading="Find the perfect sound for your next music project!"
       />
-    </div>
+      <Discover />
+    </>
   );
 }

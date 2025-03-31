@@ -2,12 +2,6 @@ import Link from "next/link";
 import { GoDotFill } from "react-icons/go";
 import { IconType } from "react-icons";
 
-type Item = {
-  label: string;
-  href?: string;
-  icon?: IconType;
-};
-
 type DropdownProps = {
   title?: string;
   icon: IconType;
@@ -15,46 +9,70 @@ type DropdownProps = {
   className?: string;
 };
 
+type DropdownItemProps = {
+  item: Item;
+};
+
+type Item = {
+  label: string;
+  href?: string;
+  icon?: IconType;
+  isDivider?: boolean;
+};
+
+const DropdownItem = ({ item }: DropdownItemProps) => {
+  const { label, href, icon: ItemIcon, isDivider } = item;
+
+  if (label === "divider" || isDivider) {
+    return (
+      <div
+        className="h-[1px] bg-borderThin w-full my-2 pointer-events-none select-none"
+        key={label}
+      />
+    );
+  }
+
+  return (
+    <li className="text-white transition-colors hover:bg-linkHover rounded-md hover:text-white">
+      <Link
+        href={href || "#"}
+        className="text-[14px] py-2 w-full h-full flex items-center gap-2 px-4"
+      >
+        {ItemIcon ? <ItemIcon /> : <GoDotFill size={18} />}
+        {label}
+      </Link>
+    </li>
+  );
+};
+
 const DropdownSection = ({
   title,
   icon: Icon,
   items,
-  className,
+  className = "",
 }: DropdownProps) => {
+  const getIconSize = () => {
+    switch (title) {
+      case "Genres":
+        return 20;
+      case "Instruments":
+        return 22;
+      default:
+        return 18;
+    }
+  };
   return (
     <div>
       {title && (
         <button className="flex items-center text-[#fff] font-bold gap-2 px-4 mb-2">
-          <Icon
-            size={title === "Genres" ? 20 : title === "Instruments" ? 22 : 18}
-          />
+          <Icon size={getIconSize()} />
           {title}
         </button>
       )}
       <ul className={`min-w-[224px] ${className}`}>
-        {items.map(({ label, href, icon }) => {
-          if (label === "divider")
-            return (
-              <div
-                className="h-[1px] bg-borderThin w-full my-2 pointer-events-none select-none"
-                key={label}
-              />
-            );
-          return (
-            <li
-              key={label}
-              className="text-white transition-colors hover:bg-linkHover rounded-md hover:text-[#fff]"
-            >
-              <Link
-                href={href || "#"}
-                className="text-[14px] py-2 w-full h-full flex items-center gap-2 px-4"
-              >
-                {icon ? <span>{icon({})}</span> : <GoDotFill size={18} />}
-                {label}
-              </Link>
-            </li>
-          );
-        })}
+        {items.map((item) => (
+          <DropdownItem key={item.label} item={item} />
+        ))}
       </ul>
     </div>
   );
