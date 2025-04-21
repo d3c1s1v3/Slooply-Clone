@@ -2,12 +2,6 @@ import { IoEllipsisHorizontalCircleOutline } from "react-icons/io5";
 import { PiWaveformBold } from "react-icons/pi";
 import { FaPlay } from "react-icons/fa";
 
-const Badge = ({ children }: { children: React.ReactNode }) => {
-  <div className="bg-[#0a0e18] text-xs px-2 rounded-xl flex items-center gap-2">
-    {children}
-  </div>;
-};
-
 type SwiperCardProps = {
   index: number;
   featured?: boolean;

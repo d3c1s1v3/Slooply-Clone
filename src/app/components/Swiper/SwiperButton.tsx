@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { useSwiper } from "swiper/react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
